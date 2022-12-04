@@ -1,11 +1,10 @@
 import { useRef, useEffect, useState } from "react";
 import * as mapboxgl from "mapbox-gl";
-import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-import { Rating } from "react-simple-star-rating";
-import meterageIcon from "../assets/img/meterage.png";
 import markerIcon from "../assets/img/marker.png";
-import wallpaper from "../assets/img/wallpaper.png";
 import { data } from "../data";
+import Tooltip from "../components/Tooltip";
+import ReactDOMServer from "react-dom/server";
+import axios from "axios";
 
 function App() {
   const mapContainer: any = useRef(null);
@@ -14,6 +13,27 @@ function App() {
   const [lng, setLng] = useState(-70.9);
   const [lat, setLat] = useState(42.35);
   const [zoom, setZoom] = useState(1);
+  // const [data, setData] = useState({
+  //   type: "FeatureCollection",
+  //   crs: {
+  //     type: "name",
+  //     properties: {
+  //       name: "urn:ogc:def:crs:OGC:1.3:CRS84",
+  //     },
+  //   },
+  //   features: [],
+  // });
+
+  // const getData = async () => {
+  //   try {
+  //     const response = await axios.get("http://real-state.service.fn/mockapi");
+  //     console.log(response.data);
+
+  //     // setData({ ...data, features: response.data });
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
   useEffect(() => {
     if (map.current) return;
@@ -111,10 +131,13 @@ function App() {
         while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
           coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
         }
-
         new mapboxgl.Popup()
           .setLngLat(coordinates)
-          .setHTML(``)
+          .setHTML(
+            ReactDOMServer.renderToString(
+              <Tooltip item={e.features[0].properties} />
+            )
+          )
           .addTo(map.current);
       });
 
@@ -125,8 +148,6 @@ function App() {
         const newMarkers: any = {};
         const features = map.current.querySourceFeatures("earthquakes");
 
-        // for every cluster on the screen, create an HTML marker for it (if we didn't yet),
-        // and add it to the map if it's not there already
         for (const feature of features) {
           const coords = feature.geometry.coordinates;
           const props = feature.properties;
@@ -144,7 +165,6 @@ function App() {
 
           if (!markersOnScreen[id]) marker.addTo(map.current);
         }
-        // for every marker we've added previously, remove those that are no longer visible
         for (const id in markersOnScreen) {
           if (!newMarkers[id]) markersOnScreen[id].remove();
         }
@@ -211,7 +231,6 @@ function App() {
         y1 = Math.sin(a1);
       const largeArc = end - start > 0.5 ? 1 : 0;
 
-      // draw an SVG path
       return `<path d="M ${r + r0 * x0} ${r + r0 * y0} L ${r + r * x0} ${
         r + r * y0
       } A ${r} ${r} 0 ${largeArc} 1 ${r + r * x1} ${r + r * y1} L ${
@@ -223,7 +242,7 @@ function App() {
   });
 
   useEffect(() => {
-    if (!map.current) return; // wait for map to initialize
+    if (!map.current) return;
     map.current.on("move", () => {
       setLng(map.current.getCenter().lng.toFixed(4));
       setLat(map.current.getCenter().lat.toFixed(4));
@@ -231,29 +250,11 @@ function App() {
     });
   });
 
-  return (
-    <div>
-      <div ref={mapContainer} className="map-container" />
-      <div className="tooltip" dir="rtl">
-        <div className="wallpaper-container">
-          <img className="wallpaper" src={wallpaper} alt="wallpaper" />
-          <div className="favorite">
-            {/* <AiOutlineHeart /> */}
-            <AiFillHeart style={{ color: "#ff0f00" }} />
-          </div>
-        </div>
-        <div className="title">واحد آپارتمانی 4 طبقه 10 واحدی</div>
-        <div className="rating">
-          <Rating initialValue={4.5} readonly size={20} />
-        </div>
-        <div className="properties">
-          <div className="meterage">
-            <img src={meterageIcon} alt="meterage" />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+  // useEffect(() => {
+  //   getData();
+  // }, []);
+
+  return <div ref={mapContainer} className="map-container" />;
 }
 
 export default App;
