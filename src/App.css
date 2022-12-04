@@ -43,10 +43,16 @@
   margin-right: 6px;
   margin-top: 12px;
   margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .rating {
   display: flex;
   align-items: center;
   margin-right: 6px;
+}
+
+.properties {
 }

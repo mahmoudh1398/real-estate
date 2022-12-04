@@ -4,8 +4,9 @@ import "./App.css";
 import markerIcon from "./marker.png";
 import { data } from "./data";
 import wallpaper from "./wallpaper.png";
-import { AiFillHeart, AiFillStar, AiOutlineHeart } from "react-icons/ai";
-import { CiStar } from "react-icons/ci";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import { Rating } from "react-simple-star-rating";
+import meterageIcon from "./meterage.png";
 
 function App() {
   const mapContainer: any = useRef(null);
@@ -242,13 +243,14 @@ function App() {
             <AiFillHeart style={{ color: "#ff0f00" }} />
           </div>
         </div>
-        <p className="title">واحد آپارتمانی 4 طبقه 10 واحدی</p>
+        <div className="title">واحد آپارتمانی 4 طبقه 10 واحدی</div>
         <div className="rating">
-          <AiFillStar style={{ color: "#F9C613" }} />
-          <AiFillStar style={{ color: "#F9C613" }} />
-          <AiFillStar style={{ color: "#F9C613" }} />
-          <CiStar style={{ color: "#ADADAD" }} />
-          <CiStar style={{ color: "#ADADAD" }} />
+          <Rating initialValue={4.5} readonly size={20} />
+        </div>
+        <div className="properties">
+          <div className="meterage">
+            <img src={meterageIcon} alt="meterage" />
+          </div>
         </div>
       </div>
     </div>
