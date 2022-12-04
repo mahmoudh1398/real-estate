@@ -1,9 +1,9 @@
-import React, { useRef, useEffect, useState } from "react";
+import  { useRef, useEffect, useState } from "react";
 import * as mapboxgl from "mapbox-gl";
-import "./App.css";
-import markerIcon from "./marker.png";
-import { data } from "./data";
-import wallpaper from "./wallpaper.png";
+// import "./App.css";
+import markerIcon from "./assets/img/marker.png";
+import wallpaper from "./assets/img/wallpaper.png";
+import { data } from "../data";
 import { AiFillHeart, AiFillStar, AiOutlineHeart } from "react-icons/ai";
 import { CiStar } from "react-icons/ci";
 

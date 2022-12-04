@@ -1,0 +1,23 @@
+@import "./app";
+
+body {
+  direction: rtl;
+}
+
+// scroll bar changes style
+::-webkit-scrollbar {
+  width: 5px;
+  height: 63px;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #d5dae2;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
