@@ -1,12 +1,12 @@
-import React, { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import * as mapboxgl from "mapbox-gl";
 import "./App.css";
-import markerIcon from "./marker.png";
-import { data } from "./data";
-import wallpaper from "./wallpaper.png";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { Rating } from "react-simple-star-rating";
 import meterageIcon from "./meterage.png";
+import markerIcon from "../assets/img//marker.png";
+import wallpaper from "../assets/img/wallpaper.png";
+import { data } from "../data";
 
 function App() {
   const mapContainer: any = useRef(null);
