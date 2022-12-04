@@ -1,10 +1,9 @@
 import { useRef, useEffect, useState } from "react";
 import * as mapboxgl from "mapbox-gl";
-import "./App.css";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { Rating } from "react-simple-star-rating";
-import meterageIcon from "./meterage.png";
-import markerIcon from "../assets/img//marker.png";
+import meterageIcon from "../assets/img/meterage.png";
+import markerIcon from "../assets/img/marker.png";
 import wallpaper from "../assets/img/wallpaper.png";
 import { data } from "../data";
 
