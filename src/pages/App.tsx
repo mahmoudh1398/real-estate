@@ -104,7 +104,7 @@ const App = () => {
         "pk.eyJ1IjoibWF0aW5ub3JvenBvdXIiLCJhIjoiY2xhZjZyMzY1MTIxdDN2czQycjNsdXdxbyJ9.SAwQhE_inq9Syo1F3boUCA",
 
       container: mapContainer.current,
-      style: "mapbox://styles/mapbox/light-v11",
+      style: "mapbox://styles/matinnorozpour/clb39o3ik002d14lffr5prbmq",
       center: [lng, lat],
       zoom: zoom,
       projection: {
