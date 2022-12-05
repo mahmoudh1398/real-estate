@@ -1,0 +1,44 @@
+.numberInput-container {
+  display: flex;
+  align-items: center;
+  .numberInput {
+    width: 115px;
+    height: 37px;
+    background: #ffffff;
+    color: #717171;
+    border: 1px solid #dedede;
+    border-radius: 15px;
+    padding-right: 10px;
+    outline: none;
+  }
+  .numberInput-placeholder {
+    margin-right: -75px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    color: #afafaf;
+    border-right: 1px solid #b3b3b3;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-right: 10px;
+  }
+  ::placeholder {
+    color: #bdbdbd;
+    font-family: "IRANSans";
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
