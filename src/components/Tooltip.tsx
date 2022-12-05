@@ -11,8 +11,6 @@ interface TooltipProps {
 }
 
 const Tooltip: FC<TooltipProps> = ({ item }): JSX.Element => {
-  // console.log(item);
-
   return (
     <div className="tooltip" dir="rtl">
       <div className="wallpaper-container">
@@ -27,7 +25,7 @@ const Tooltip: FC<TooltipProps> = ({ item }): JSX.Element => {
       </div>
       <div className="title">{item.title}</div>
       <div className="rating">
-        <Rating initialValue={+item.rating} readonly size={20} />
+        <Rating initialValue={item.rating} readonly size={20} />
       </div>
       <div className="properties">
         <div className="meterage">
