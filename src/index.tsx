@@ -6,4 +6,4 @@ import BuildingMap from "./pages/Map";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
-root.render(<BuildingMap />);
+root.render(<App />);

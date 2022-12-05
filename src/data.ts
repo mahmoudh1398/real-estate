@@ -11,6 +11,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.35,
+        buildingType: "آپارتمانی",
         type: "rent",
         title: "واحد مسکونی 433 متری",
         mortgage: "200000000",
@@ -31,6 +32,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.68,
+        buildingType: "آپارتمانی",
         type: "rent",
         title: "واحد مسکونی 396 متری",
         mortgage: "280000000",
@@ -51,6 +53,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.65,
+        buildingType: "آپارتمانی",
         type: "rent",
         title: "واحد مسکونی 322 متری",
         mortgage: "480000000",
@@ -71,6 +74,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.47,
+        buildingType: "آپارتمانی",
         type: "rent",
         title: "واحد مسکونی 499 متری",
         mortgage: "350000000",
@@ -91,6 +95,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.61,
+        buildingType: "آپارتمانی",
         type: "rent",
         title: "واحد مسکونی 363 متری",
         mortgage: "440000000",
@@ -111,6 +116,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.27,
+        buildingType: "آپارتمانی",
         type: "rent",
         title: "واحد مسکونی 309 متری",
         mortgage: "210000000",
@@ -131,6 +137,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.59,
+        buildingType: "آپارتمانی",
         type: "rent",
         title: "واحد مسکونی 370 متری",
         mortgage: "650000000",
@@ -151,6 +158,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.22,
+        buildingType: "آپارتمانی",
         type: "rent",
         title: "واحد مسکونی 424 متری",
         mortgage: "810000000",
@@ -171,6 +179,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.59,
+        buildingType: "آپارتمانی",
         type: "rent",
         title: "واحد مسکونی 428 متری",
         mortgage: "770000000",
@@ -191,6 +200,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.16,
+        buildingType: "آپارتمانی",
         type: "rent",
         title: "واحد مسکونی 341 متری",
         mortgage: "280000000",
@@ -211,6 +221,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.76,
+        buildingType: "آپارتمانی",
         type: "rent",
         title: "واحد مسکونی 378 متری",
         mortgage: "380000000",
@@ -231,6 +242,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.62,
+        buildingType: "آپارتمانی",
         type: "rent",
         title: "واحد مسکونی 416 متری",
         mortgage: "410000000",
@@ -251,6 +263,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.69,
+        buildingType: "آپارتمانی",
         type: "rent",
         title: "واحد مسکونی 401 متری",
         mortgage: "610000000",
@@ -271,6 +284,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.16,
+        buildingType: "آپارتمانی",
         type: "rent",
         title: "واحد مسکونی 412 متری",
         mortgage: "210000000",
@@ -291,6 +305,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.47,
+        buildingType: "خانه و ویلا",
         type: "sell",
         title: "واحد مسکونی 422 متری",
         mortgage: "260000000",
@@ -311,6 +326,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.47,
+        buildingType: "خانه و ویلا",
         type: "sell",
         title: "واحد مسکونی 450 متری",
         mortgage: "340000000",
@@ -331,6 +347,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.31,
+        buildingType: "خانه و ویلا",
         type: "sell",
         title: "واحد مسکونی 409 متری",
         mortgage: "210000000",
@@ -351,6 +368,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.78,
+        buildingType: "خانه و ویلا",
         type: "sell",
         title: "واحد مسکونی 398 متری",
         mortgage: "200000000",
@@ -371,6 +389,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.68,
+        buildingType: "خانه و ویلا",
         type: "sell",
         title: "واحد مسکونی 388 متری",
         mortgage: "860000000",
@@ -391,6 +410,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.14,
+        buildingType: "خانه و ویلا",
         type: "sell",
         title: "واحد مسکونی 429 متری",
         mortgage: "830000000",
@@ -411,6 +431,8 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.3,
+
+        buildingType: "خانه و ویلا",
         type: "sell",
         title: "واحد مسکونی 396 متری",
         mortgage: "640000000",
@@ -431,6 +453,8 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.6,
+
+        buildingType: "خانه و ویلا",
         type: "rent",
         title: "واحد مسکونی 344 متری",
         mortgage: "890000000",
@@ -451,6 +475,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.68,
+        buildingType: "خانه و ویلا",
         type: "rent",
         title: "واحد مسکونی 345 متری",
         mortgage: "800000000",
@@ -471,6 +496,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.67,
+        buildingType: "آپارتمانی",
         type: "rent",
         title: "واحد مسکونی 305 متری",
         mortgage: "260000000",
@@ -491,6 +517,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.62,
+        buildingType: "آپارتمانی",
         type: "rent",
         title: "واحد مسکونی 353 متری",
         mortgage: "730000000",
@@ -511,6 +538,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.18,
+        buildingType: "آپارتمانی",
         type: "rent",
         title: "واحد مسکونی 325 متری",
         mortgage: "250000000",
@@ -531,6 +559,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.28,
+        buildingType: "آپارتمانی",
         type: "rent",
         title: "واحد مسکونی 369 متری",
         mortgage: "520000000",
@@ -551,6 +580,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.59,
+        buildingType: "آپارتمانی",
         type: "rent",
         title: "واحد مسکونی 312 متری",
         mortgage: "640000000",
@@ -571,6 +601,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.13,
+        buildingType: "تجاری",
         type: "rent",
         title: "واحد مسکونی 362 متری",
         mortgage: "830000000",
@@ -591,6 +622,8 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.2,
+
+        buildingType: "تجاری",
         type: "rent",
         title: "واحد مسکونی 329 متری",
         mortgage: "860000000",
@@ -611,6 +644,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.67,
+        buildingType: "تجاری",
         type: "rent",
         title: "واحد مسکونی 414 متری",
         mortgage: "300000000",
@@ -631,6 +665,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.33,
+        buildingType: "تجاری",
         type: "rent",
         title: "واحد مسکونی 459 متری",
         mortgage: "650000000",
@@ -651,6 +686,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.84,
+        buildingType: "تجاری",
         type: "rent",
         title: "واحد مسکونی 358 متری",
         mortgage: "340000000",
@@ -671,6 +707,8 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.5,
+
+        buildingType: "تجاری",
         type: "rent",
         title: "واحد مسکونی 379 متری",
         mortgage: "640000000",
@@ -691,6 +729,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.36,
+        buildingType: "تجاری",
         type: "rent",
         title: "واحد مسکونی 366 متری",
         mortgage: "440000000",
@@ -711,6 +750,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.44,
+        buildingType: "تجاری",
         type: "rent",
         title: "واحد مسکونی 326 متری",
         mortgage: "820000000",
@@ -731,6 +771,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.88,
+        buildingType: "تجاری",
         type: "rent",
         title: "واحد مسکونی 458 متری",
         mortgage: "560000000",
@@ -751,6 +792,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.68,
+        buildingType: "تجاری",
         type: "rent",
         title: "واحد مسکونی 359 متری",
         mortgage: "570000000",
@@ -771,6 +813,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.67,
+        buildingType: "تجاری",
         type: "rent",
         title: "واحد مسکونی 453 متری",
         mortgage: "440000000",
@@ -791,6 +834,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.44,
+        buildingType: "تجاری",
         type: "rent",
         title: "واحد مسکونی 464 متری",
         mortgage: "390000000",
@@ -811,6 +855,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.47,
+        buildingType: "تجاری",
         type: "rent",
         title: "واحد مسکونی 438 متری",
         mortgage: "820000000",
@@ -831,6 +876,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.55,
+        buildingType: "آپارتمانی",
         type: "rent",
         title: "واحد مسکونی 441 متری",
         mortgage: "550000000",
@@ -851,6 +897,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.79,
+        buildingType: "آپارتمانی",
         type: "rent",
         title: "واحد مسکونی 473 متری",
         mortgage: "570000000",
@@ -871,6 +918,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.41,
+        buildingType: "آپارتمانی",
         type: "rent",
         title: "واحد مسکونی 341 متری",
         mortgage: "530000000",
@@ -891,6 +939,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.45,
+        buildingType: "خانه و ویلا",
         type: "rent",
         title: "واحد مسکونی 486 متری",
         mortgage: "220000000",
@@ -911,6 +960,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.66,
+        buildingType: "خانه و ویلا",
         type: "sell",
         title: "واحد مسکونی 405 متری",
         mortgage: "220000000",
@@ -931,6 +981,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.57,
+        buildingType: "خانه و ویلا",
         type: "sell",
         title: "واحد مسکونی 315 متری",
         mortgage: "560000000",
@@ -951,6 +1002,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.45,
+        buildingType: "خانه و ویلا",
         type: "sell",
         title: "واحد مسکونی 487 متری",
         mortgage: "340000000",
@@ -971,6 +1023,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.64,
+        buildingType: "خانه و ویلا",
         type: "sell",
         title: "واحد مسکونی 415 متری",
         mortgage: "830000000",
@@ -991,6 +1044,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.25,
+        buildingType: "خانه و ویلا",
         type: "sell",
         title: "واحد مسکونی 454 متری",
         mortgage: "780000000",
@@ -1011,6 +1065,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.86,
+        buildingType: "آپارتمانی",
         type: "rent",
         title: "واحد مسکونی 408 متری",
         mortgage: "520000000",
@@ -1031,6 +1086,8 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.2,
+
+        buildingType: "آپارتمانی",
         type: "rent",
         title: "واحد مسکونی 490 متری",
         mortgage: "560000000",
@@ -1051,6 +1108,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.74,
+        buildingType: "آپارتمانی",
         type: "rent",
         title: "واحد مسکونی 438 متری",
         mortgage: "380000000",
@@ -1071,6 +1129,8 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.5,
+
+        buildingType: "آپارتمانی",
         type: "rent",
         title: "واحد مسکونی 487 متری",
         mortgage: "330000000",
@@ -1091,6 +1151,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.89,
+        buildingType: "آپارتمانی",
         type: "rent",
         title: "واحد مسکونی 457 متری",
         mortgage: "670000000",
@@ -1111,6 +1172,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.67,
+        buildingType: "آپارتمانی",
         type: "rent",
         title: "واحد مسکونی 485 متری",
         mortgage: "310000000",
@@ -1131,6 +1193,7 @@ export const data = {
       type: "Feature",
       properties: {
         mag: 1.28,
+        buildingType: "آپارتمانی",
         type: "rent",
         title: "واحد مسکونی 480 متری",
         mortgage: "860000000",

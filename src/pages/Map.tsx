@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Map, {
   FullscreenControl,
   LayerProps,
   NavigationControl,
   ScaleControl,
 } from "react-map-gl";
+import BedRooms from "../components/BedRooms";
+import Pins from "../components/Pins";
+import Price from "../components/Price";
+import PropertyType from "../components/PropertyType";
+import TypeSearchFilter from "../components/TypeSearchFilter";
+import { data } from "../data";
 
 const TOKEN = `pk.eyJ1IjoibWF0aW5ub3JvenBvdXIiLCJhIjoiY2xhZjZyMzY1MTIxdDN2czQycjNsdXdxbyJ9.SAwQhE_inq9Syo1F3boUCA`;
 
@@ -17,74 +23,89 @@ const BuildingMap = (props: BuildingMapProps) => {
     51.41462459643555, 35.6808447,
   ]);
 
+  const [sell, setSell] = useState<boolean>(true);
+  const [rent, setRent] = useState<boolean>(true);
+  const [search, setSearch] = useState<string>("");
+  const [bedRooms, setBedRooms] = useState<Array<number>>([1]);
+  const [propertyType, setPropertyType] = useState<string>("آپارتمانی");
+  const [price, setPrice] = useState<Array<number>>([0, 10000000000]);
+
+  const [finalData, setFinalData] = useState<any>({
+    type: "FeatureCollection",
+    crs: {
+      type: "name",
+      properties: {
+        name: "urn:ogc:def:crs:OGC:1.3:CRS84",
+      },
+    },
+    features: [],
+  });
+
+  useEffect(() => {
+    const a = data.features.filter((item) =>
+      sell && rent
+        ? true
+        : !sell && rent
+        ? item.properties.type === "rent"
+        : sell && !rent
+        ? item.properties.type === "sell"
+        : false
+    );
+    const b = a.filter((item) => bedRooms.includes(item.properties.bedrooms));
+
+    const c = b.filter(
+      (item) =>
+        +item.properties.price >= price[0] && +item.properties.price <= price[1]
+    );
+
+    const d = c.filter((item) => item.properties.buildingType === propertyType);
+
+    setFinalData({ ...finalData, features: d });
+  }, [sell, rent, bedRooms, propertyType, price]);
+
   return (
-    <Map
-      initialViewState={{
-        latitude: 35.755428556765054,
-        longitude: 51.723633655982574,
-        zoom: 5,
-        bearing: 0,
-        pitch: 0,
-      }}
-      onZoom={(e) => {
-        setChangeZoom(e);
-      }}
-      onClick={(e) => {
-        setCurrentLocation([e.lngLat.lng, e.lngLat.lat]);
-      }}
-      style={{ borderRadius: "15px" }}
-      mapStyle="mapbox://styles/matinnorozpour/cla7tphmp000l14melgwvbob8"
-      mapboxAccessToken={TOKEN}
-    >
-      <FullscreenControl position="bottom-left" />
-      <NavigationControl position="bottom-left" />
-      <ScaleControl unit="metric" maxWidth={100} />
-    </Map>
+    <div style={{ height: "100vh" }}>
+      <Map
+        initialViewState={{
+          latitude: 35.755428556765054,
+          longitude: 51.723633655982574,
+          zoom: 5,
+          bearing: 0,
+          pitch: 0,
+        }}
+        onZoom={(e) => {
+          setChangeZoom(e);
+        }}
+        onClick={(e) => {
+          setCurrentLocation([e.lngLat.lng, e.lngLat.lat]);
+        }}
+        style={{ borderRadius: "15px" }}
+        mapStyle="mapbox://styles/matinnorozpour/cla7tphmp000l14melgwvbob8"
+        mapboxAccessToken={TOKEN}
+      >
+        <FullscreenControl position="bottom-left" />
+        <NavigationControl position="bottom-left" />
+        <ScaleControl unit="metric" maxWidth={100} />
+        <Pins data={finalData.features} ChangeZoom={ChangeZoom} />
+      </Map>
+      <div className="sidbar">
+        <TypeSearchFilter
+          rent={rent}
+          sell={sell}
+          search={search}
+          setRent={setRent}
+          setSell={setSell}
+          setSearch={setSearch}
+        />
+        <BedRooms bedRooms={bedRooms} setBedRooms={setBedRooms} />
+        <PropertyType
+          propertyType={propertyType}
+          setPropertyType={setPropertyType}
+        />
+        <Price range={price} setRange={setPrice} />
+      </div>
+    </div>
   );
 };
 
 export default BuildingMap;
-
-export const clusterLayer: LayerProps = {
-  id: "clusters",
-  type: "circle",
-  source: "earthquakes",
-  filter: ["has", "point_count"],
-  paint: {
-    "circle-color": [
-      "step",
-      ["get", "point_count"],
-      "#51bbd6",
-      100,
-      "#f1f075",
-      750,
-      "#f28cb1",
-    ],
-    "circle-radius": ["step", ["get", "point_count"], 20, 100, 30, 750, 40],
-  },
-};
-
-export const clusterCountLayer: LayerProps = {
-  id: "cluster-count",
-  type: "symbol",
-  source: "earthquakes",
-  filter: ["has", "point_count"],
-  layout: {
-    "text-field": "{point_count_abbreviated}",
-    "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
-    "text-size": 12,
-  },
-};
-
-export const unclusteredPointLayer: LayerProps = {
-  id: "unclustered-point",
-  type: "circle",
-  source: "earthquakes",
-  filter: ["!", ["has", "point_count"]],
-  paint: {
-    "circle-color": "#11b4da",
-    "circle-radius": 4,
-    "circle-stroke-width": 1,
-    "circle-stroke-color": "#fff",
-  },
-};
