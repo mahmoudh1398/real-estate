@@ -308,13 +308,17 @@ const App = () => {
       setLat(map.current.getCenter().lat.toFixed(4));
       setZoom(map.current.getZoom().toFixed(2));
     });
+    map.current.on("load", () => {
+      const mySource = map.current.getSource("earthquakes");
+      mySource && mySource.setData(finalData);
+    });
   });
 
   useEffect(() => {
     const mySource = map.current.getSource("earthquakes");
     mySource && mySource.setData(finalData);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [finalData, map?.current?.getSource("earthquakes")]);
+  }, [finalData]);
 
   return (
     <div>

@@ -22,7 +22,7 @@ const PropertyType: React.FC<PropertyTypeProps> = ({
                 id={item}
                 name="radio"
                 value={item}
-                onClick={() => setPropertyType(item)}
+                onChange={() => setPropertyType(item)}
                 checked={item === propertyType}
                 className="input"
               />
