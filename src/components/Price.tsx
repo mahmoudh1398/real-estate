@@ -11,7 +11,7 @@ const Price: React.FC<PriceProps> = ({ range, setRange }) => {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
   return (
-    <div className="price">
+    <div className="price-card">
       <HeaderBox title="قیمت" />
       <div className="range-conatiner">
         <div className="range-slider">

@@ -5,10 +5,21 @@ import { data } from "../data";
 import Tooltip from "../components/Tooltip";
 import ReactDOMServer from "react-dom/server";
 import axios from "axios";
+import TypeSearchFilter from "../components/TypeSearchFilter";
+import BedRooms from "../components/BedRooms";
+import PropertyType from "../components/PropertyType";
+import Price from "../components/Price";
 
 function App() {
   const mapContainer: any = useRef(null);
   const map: any = useRef(null);
+
+  const [sell, setSell] = useState<boolean>(true);
+  const [rent, setRent] = useState<boolean>(true);
+  const [search, setSearch] = useState<string>("");
+  const [bedRooms, setBedRooms] = useState<Array<number>>([1]);
+  const [propertyType, setPropertyType] = useState<string>("آپارتمانی");
+  const [price, setPrice] = useState<Array<number>>([0, 1000000000]);
 
   const [lng, setLng] = useState(-70.9);
   const [lat, setLat] = useState(42.35);
@@ -35,6 +46,39 @@ function App() {
   //   }
   // };
 
+  const [finalData, setFinalData] = useState<any>({
+    type: "FeatureCollection",
+    crs: {
+      type: "name",
+      properties: {
+        name: "urn:ogc:def:crs:OGC:1.3:CRS84",
+      },
+    },
+    features: [],
+  });
+
+  console.log(finalData)
+  
+  useEffect(() => {
+    const a = data.features.filter((item) =>
+      sell && rent
+        ? true
+        : !sell && rent
+        ? item.properties.type === "rent"
+        : sell && !rent
+        ? item.properties.type === "sell"
+        : false
+    );
+    const b = a.filter((item) => bedRooms.includes(item.properties.bedrooms));
+
+    const c = b.filter(
+      (item) =>
+        +item.properties.price >= price[0] && +item.properties.price <= price[1]
+    );
+
+    setFinalData({ ...finalData, features: c });
+  }, [sell, rent, bedRooms, propertyType, price]);
+
   useEffect(() => {
     if (map.current) return;
 
@@ -50,7 +94,7 @@ function App() {
       },
     });
 
-    map.current.addControl(new mapboxgl.NavigationControl());
+    // map.current.addControl(new mapboxgl.NavigationControl());
 
     const mag1 = ["<", ["get", "mag"], 2];
     const mag2 = ["all", [">=", ["get", "mag"], 2], ["<", ["get", "mag"], 3]];
@@ -115,10 +159,10 @@ function App() {
         paint: {
           "icon-color": [
             "match",
-            ["get", "tsunami"],
-            0,
+            ["get", "type"],
+            'rent',
             "#00B086",
-            1,
+            'sell',
             "#FA1744",
             "#000000",
           ],
@@ -239,7 +283,7 @@ function App() {
         r + r0 * y0
       }" fill="${color}" />`;
     }
-  });
+  }, [finalData]);
 
   useEffect(() => {
     if (!map.current) return;
@@ -254,7 +298,27 @@ function App() {
   //   getData();
   // }, []);
 
-  return <div ref={mapContainer} className="map-container" />;
+  return (
+    <div>
+      <div ref={mapContainer} className="map-container" />
+      <div className="sidbar">
+        <TypeSearchFilter
+          rent={rent}
+          sell={sell}
+          search={search}
+          setRent={setRent}
+          setSell={setSell}
+          setSearch={setSearch}
+        />
+        <BedRooms bedRooms={bedRooms} setBedRooms={setBedRooms} />
+        <PropertyType
+          propertyType={propertyType}
+          setPropertyType={setPropertyType}
+        />
+        <Price range={price} setRange={setPrice} />
+      </div>
+    </div>
+  );
 }
 
 export default App;
