@@ -28,7 +28,7 @@ const Tooltip: FC<TooltipProps> = ({ item }): JSX.Element => {
         <Rating initialValue={item.rating} readonly size={20} />
       </div>
       <div className="properties">
-        <div className="meterage">
+        <div className="tooltip-meterage">
           <img src={meterageIcon} alt="meterage" />
           <span>متراژ: {item.meterage} متر‌مربع</span>
         </div>
