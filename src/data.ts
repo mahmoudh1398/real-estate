@@ -24,7 +24,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.6262637688687, 51.37775638669931],
+        coordinates: [51.37775638669931, 35.6262637688687],
       },
     },
     {
@@ -44,7 +44,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.61888499030012, 51.49731412782996],
+        coordinates: [51.49731412782996, 35.61888499030012],
       },
     },
     {
@@ -64,7 +64,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.660884512594215, 51.240252947037014],
+        coordinates: [51.240252947037014, 35.660884512594215],
       },
     },
     {
@@ -84,7 +84,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.66722207182559, 51.360938248024034],
+        coordinates: [51.360938248024034, 35.66722207182559],
       },
     },
     {
@@ -104,7 +104,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.61849123501474, 51.228554969040836],
+        coordinates: [51.228554969040836, 35.61849123501474],
       },
     },
     {
@@ -124,7 +124,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.68939027954126, 51.37805828812878],
+        coordinates: [51.37805828812878, 35.68939027954126],
       },
     },
     {
@@ -144,7 +144,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.65607573464644, 51.36286652097426],
+        coordinates: [51.36286652097426, 35.65607573464644],
       },
     },
     {
@@ -164,7 +164,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.74507208732658, 51.27088291851683],
+        coordinates: [51.27088291851683, 35.74507208732658],
       },
     },
     {
@@ -184,7 +184,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.79340438452509, 51.40558852830488],
+        coordinates: [51.40558852830488, 35.79340438452509],
       },
     },
     {
@@ -204,7 +204,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.70297390746723, 51.3320997887432],
+        coordinates: [51.3320997887432, 35.70297390746723],
       },
     },
     {
@@ -224,7 +224,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.60126068478235, 51.26209552069188],
+        coordinates: [51.26209552069188, 35.60126068478235],
       },
     },
     {
@@ -244,7 +244,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.61430814438756, 51.27465885233671],
+        coordinates: [51.27465885233671, 35.61430814438756],
       },
     },
     {
@@ -264,7 +264,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.63338295077248, 51.30153201266725],
+        coordinates: [51.30153201266725, 35.63338295077248],
       },
     },
     {
@@ -284,14 +284,14 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.716240044196894, 51.402346733039785],
+        coordinates: [51.402346733039785, 35.716240044196894],
       },
     },
     {
       type: "Feature",
       properties: {
         mag: 1.47,
-        type: "rent",
+        type: "sell",
         title: "واحد مسکونی 422 متری",
         mortgage: "260000000",
         price: "2900000000",
@@ -304,14 +304,14 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.72810855672827, 51.29815556699107],
+        coordinates: [51.29815556699107, 35.72810855672827],
       },
     },
     {
       type: "Feature",
       properties: {
-        mag: 1.51,
-        type: "rent",
+        mag: 1.47,
+        type: "sell",
         title: "واحد مسکونی 450 متری",
         mortgage: "340000000",
         price: "2300000000",
@@ -324,14 +324,14 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.67850272143348, 51.20653847179326],
+        coordinates: [51.20653847179326, 35.67850272143348],
       },
     },
     {
       type: "Feature",
       properties: {
         mag: 1.31,
-        type: "rent",
+        type: "sell",
         title: "واحد مسکونی 409 متری",
         mortgage: "210000000",
         price: "4500000000",
@@ -344,14 +344,14 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.7944558534845, 51.267860519820516],
+        coordinates: [51.267860519820516, 35.7944558534845],
       },
     },
     {
       type: "Feature",
       properties: {
         mag: 1.78,
-        type: "rent",
+        type: "sell",
         title: "واحد مسکونی 398 متری",
         mortgage: "200000000",
         price: "3100000000",
@@ -364,14 +364,14 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.76792561799653, 51.47852779746414],
+        coordinates: [51.47852779746414, 35.76792561799653],
       },
     },
     {
       type: "Feature",
       properties: {
         mag: 1.68,
-        type: "rent",
+        type: "sell",
         title: "واحد مسکونی 388 متری",
         mortgage: "860000000",
         price: "4400000000",
@@ -384,14 +384,14 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.77377585180182, 51.35868380946438],
+        coordinates: [51.35868380946438, 35.77377585180182],
       },
     },
     {
       type: "Feature",
       properties: {
         mag: 1.14,
-        type: "rent",
+        type: "sell",
         title: "واحد مسکونی 429 متری",
         mortgage: "830000000",
         price: "5100000000",
@@ -404,14 +404,14 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.6646229017203, 51.38370048304085],
+        coordinates: [51.38370048304085, 35.6646229017203],
       },
     },
     {
       type: "Feature",
       properties: {
         mag: 1.3,
-        type: "rent",
+        type: "sell",
         title: "واحد مسکونی 396 متری",
         mortgage: "640000000",
         price: "3900000000",
@@ -424,7 +424,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.70700915200546, 51.43996344578702],
+        coordinates: [51.43996344578702, 35.70700915200546],
       },
     },
     {
@@ -444,7 +444,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.75267701268275, 51.43317534985203],
+        coordinates: [51.43317534985203, 35.75267701268275],
       },
     },
     {
@@ -464,7 +464,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.62028237200281, 51.46529677781491],
+        coordinates: [51.46529677781491, 35.62028237200281],
       },
     },
     {
@@ -484,7 +484,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.64932931362778, 51.22752428346635],
+        coordinates: [51.22752428346635, 35.64932931362778],
       },
     },
     {
@@ -504,7 +504,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.666809707988584, 51.241702246365364],
+        coordinates: [51.241702246365364, 35.666809707988584],
       },
     },
     {
@@ -524,7 +524,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.76288973180656, 51.209162114495165],
+        coordinates: [51.209162114495165, 35.76288973180656],
       },
     },
     {
@@ -544,7 +544,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.78958872556165, 51.349899831266356],
+        coordinates: [51.349899831266356, 35.78958872556165],
       },
     },
     {
@@ -564,7 +564,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.656724611650304, 51.492599742834706],
+        coordinates: [51.492599742834706, 35.656724611650304],
       },
     },
     {
@@ -584,7 +584,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.61461929050057, 51.35644098230906],
+        coordinates: [51.35644098230906, 35.61461929050057],
       },
     },
     {
@@ -604,7 +604,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.64633214661998, 51.39097779763044],
+        coordinates: [51.39097779763044, 35.64633214661998],
       },
     },
     {
@@ -624,7 +624,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.795658441903576, 51.297902142451086],
+        coordinates: [51.297902142451086, 35.795658441903576],
       },
     },
     {
@@ -644,7 +644,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.795223364558694, 51.48876261273695],
+        coordinates: [51.48876261273695, 35.795223364558694],
       },
     },
     {
@@ -664,7 +664,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.6029497328142, 51.33994598934923],
+        coordinates: [51.33994598934923, 35.6029497328142],
       },
     },
     {
@@ -684,7 +684,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.66525300540528, 51.2504205832757],
+        coordinates: [51.2504205832757, 35.66525300540528],
       },
     },
     {
@@ -704,7 +704,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.723719580525724, 51.410206851747496],
+        coordinates: [51.410206851747496, 35.723719580525724],
       },
     },
     {
@@ -724,7 +724,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.61979586969985, 51.23828681420173],
+        coordinates: [51.23828681420173, 35.61979586969985],
       },
     },
     {
@@ -744,7 +744,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.714998552023005, 51.34569351500386],
+        coordinates: [51.34569351500386, 35.714998552023005],
       },
     },
     {
@@ -764,7 +764,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.604331570242906, 51.44677688722514],
+        coordinates: [51.44677688722514, 35.604331570242906],
       },
     },
     {
@@ -784,7 +784,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.676938473962586, 51.48174485304769],
+        coordinates: [51.48174485304769, 35.676938473962586],
       },
     },
     {
@@ -804,7 +804,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.614882546785395, 51.49634951333424],
+        coordinates: [51.49634951333424, 35.614882546785395],
       },
     },
     {
@@ -824,7 +824,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.620213751507166, 51.2310422945869],
+        coordinates: [51.2310422945869, 35.620213751507166],
       },
     },
     {
@@ -844,7 +844,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.63567589971631, 51.42612208654812],
+        coordinates: [51.42612208654812, 35.63567589971631],
       },
     },
     {
@@ -864,7 +864,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.7748574871009, 51.262396403256034],
+        coordinates: [51.262396403256034, 35.7748574871009],
       },
     },
     {
@@ -884,7 +884,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.75430770568855, 51.28420742073803],
+        coordinates: [51.28420742073803, 35.75430770568855],
       },
     },
     {
@@ -904,14 +904,14 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.761956643082165, 51.285002101259195],
+        coordinates: [51.285002101259195, 35.761956643082165],
       },
     },
     {
       type: "Feature",
       properties: {
         mag: 1.66,
-        type: "rent",
+        type: "sell",
         title: "واحد مسکونی 405 متری",
         mortgage: "220000000",
         price: "3600000000",
@@ -924,14 +924,14 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.76787340844846, 51.207236430070594],
+        coordinates: [51.207236430070594, 35.76787340844846],
       },
     },
     {
       type: "Feature",
       properties: {
         mag: 1.57,
-        type: "rent",
+        type: "sell",
         title: "واحد مسکونی 315 متری",
         mortgage: "560000000",
         price: "4500000000",
@@ -944,14 +944,14 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.790760401312184, 51.45575325982881],
+        coordinates: [51.45575325982881, 35.790760401312184],
       },
     },
     {
       type: "Feature",
       properties: {
         mag: 1.45,
-        type: "rent",
+        type: "sell",
         title: "واحد مسکونی 487 متری",
         mortgage: "340000000",
         price: "4100000000",
@@ -964,14 +964,14 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.74678545432871, 51.28645736548461],
+        coordinates: [51.28645736548461, 35.74678545432871],
       },
     },
     {
       type: "Feature",
       properties: {
         mag: 1.64,
-        type: "rent",
+        type: "sell",
         title: "واحد مسکونی 415 متری",
         mortgage: "830000000",
         price: "3200000000",
@@ -984,14 +984,14 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.791071237817555, 51.236613064347274],
+        coordinates: [51.236613064347274, 35.791071237817555],
       },
     },
     {
       type: "Feature",
       properties: {
         mag: 1.25,
-        type: "rent",
+        type: "sell",
         title: "واحد مسکونی 454 متری",
         mortgage: "780000000",
         price: "2100000000",
@@ -1004,7 +1004,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.64934636417414, 51.33331014165719],
+        coordinates: [51.33331014165719, 35.64934636417414],
       },
     },
     {
@@ -1024,7 +1024,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.79876435601036, 51.34849025873797],
+        coordinates: [51.34849025873797, 35.79876435601036],
       },
     },
     {
@@ -1044,7 +1044,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.6726354228022, 51.220040278486955],
+        coordinates: [51.220040278486955, 35.6726354228022],
       },
     },
     {
@@ -1064,7 +1064,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.63468790012223, 51.26987230970681],
+        coordinates: [51.26987230970681, 35.63468790012223],
       },
     },
     {
@@ -1084,7 +1084,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.74535824697775, 51.25633769463875],
+        coordinates: [51.25633769463875, 35.74535824697775],
       },
     },
     {
@@ -1104,7 +1104,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.76791407339155, 51.37759998038438],
+        coordinates: [51.37759998038438, 35.76791407339155],
       },
     },
     {
@@ -1124,7 +1124,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.783688479513145, 51.384051642831515],
+        coordinates: [51.384051642831515, 35.783688479513145],
       },
     },
     {
@@ -1144,7 +1144,7 @@ export const data = {
       },
       geometry: {
         type: "Point",
-        coordinates: [35.67427286160987, 51.454097618636496],
+        coordinates: [51.454097618636496, 35.67427286160987],
       },
     },
   ],
