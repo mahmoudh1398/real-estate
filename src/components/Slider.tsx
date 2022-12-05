@@ -1,26 +1,25 @@
 import { FC } from "react";
 import Flickity from "react-flickity-component";
-import wallpaper from "../assets/img/wallpaper.png";
+import Tooltip from "./Tooltip";
 
-interface SliderProps {}
+interface SliderProps {
+  data: Array<any>;
+}
 
-const Slider: FC<SliderProps> = (): JSX.Element => {
+const Slider: FC<SliderProps> = ({ data }): JSX.Element => {
   const flickityOptions = {
-    initialIndex: 2,
+    initialIndex: 1,
   };
 
   return (
     <Flickity
-      className={"carousel"} // default ''
-      elementType={"div"} // default 'div'
-      options={flickityOptions} // takes flickity options {}
-      disableImagesLoaded={false} // default false
-      reloadOnUpdate // default false
-      static // default false
+      className={"carousel"}
+      elementType={"div"}
+      options={flickityOptions}
     >
-      <img src={wallpaper} alt="wallpaper" />
-      <img src={wallpaper} alt="wallpaper" />
-      <img src={wallpaper} alt="wallpaper" />
+      {data.map((item: any, index: number) => (
+        <Tooltip item={item.properties} key={index} />
+      ))}
     </Flickity>
   );
 };

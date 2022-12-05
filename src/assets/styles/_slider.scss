@@ -3,4 +3,13 @@
   background: #ffffff;
   border-radius: 25px;
   box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  .flickity-viewport {
+    height: 100% !important;
+    touch-action: pan-y;
+    border-radius: 21px;
+  }
+  ol {
+    display: none;
+  }
 }

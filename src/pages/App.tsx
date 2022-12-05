@@ -324,7 +324,7 @@ const App = () => {
         />
         <Price range={price} setRange={setPrice} />
         <BedRooms bedRooms={bedRooms} setBedRooms={setBedRooms} />
-        <Slider />
+        <Slider data={data.features} />
       </div>
     </div>
   );
