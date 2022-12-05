@@ -9,6 +9,7 @@ import TypeSearchFilter from "../components/TypeSearchFilter";
 import BedRooms from "../components/BedRooms";
 import PropertyType from "../components/PropertyType";
 import Price from "../components/Price";
+import Slider from "../components/Slider";
 
 function App() {
   const mapContainer: any = useRef(null);
@@ -57,8 +58,8 @@ function App() {
     features: [],
   });
 
-  console.log(finalData)
-  
+  console.log(finalData);
+
   useEffect(() => {
     const a = data.features.filter((item) =>
       sell && rent
@@ -160,9 +161,9 @@ function App() {
           "icon-color": [
             "match",
             ["get", "type"],
-            'rent',
+            "rent",
             "#00B086",
-            'sell',
+            "sell",
             "#FA1744",
             "#000000",
           ],
@@ -310,12 +311,13 @@ function App() {
           setSell={setSell}
           setSearch={setSearch}
         />
-        <BedRooms bedRooms={bedRooms} setBedRooms={setBedRooms} />
         <PropertyType
           propertyType={propertyType}
           setPropertyType={setPropertyType}
         />
         <Price range={price} setRange={setPrice} />
+        <BedRooms bedRooms={bedRooms} setBedRooms={setBedRooms} />
+        <Slider />
       </div>
     </div>
   );
