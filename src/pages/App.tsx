@@ -1,7 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 import * as mapboxgl from "mapbox-gl";
 import markerIcon from "../assets/img/marker.png";
-import { data } from "../data";
 import Tooltip from "../components/Tooltip";
 import ReactDOMServer from "react-dom/server";
 import axios from "axios";
@@ -11,6 +10,12 @@ import PropertyType from "../components/PropertyType";
 import Price from "../components/Price";
 import Slider from "../components/Slider";
 import Meterage from "../components/Meterage";
+
+mapboxgl.setRTLTextPlugin(
+  "https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.2.3/mapbox-gl-rtl-text.js",
+  () => {},
+  true // Lazy load the plugin
+);
 
 const App = () => {
   const mapContainer: any = useRef(null);
@@ -28,27 +33,25 @@ const App = () => {
   const [lat, setLat] = useState(42.35);
   const [zoom, setZoom] = useState(1);
 
-  // const [data, setData] = useState({
-  //   type: "FeatureCollection",
-  //   crs: {
-  //     type: "name",
-  //     properties: {
-  //       name: "urn:ogc:def:crs:OGC:1.3:CRS84",
-  //     },
-  //   },
-  //   features: [],
-  // });
+  const [data, setData] = useState<any>({
+    type: "FeatureCollection",
+    crs: {
+      type: "name",
+      properties: {
+        name: "urn:ogc:def:crs:OGC:1.3:CRS84",
+      },
+    },
+    features: [],
+  });
 
-  // const getData = async () => {
-  //   try {
-  //     const response = await axios.get("http://real-state.service.fn/mockapi");
-  //     console.log(response.data);
-
-  //     // setData({ ...data, features: response.data });
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
+  const getData = async () => {
+    try {
+      const response = await axios.get("http://real-state.service.fn/mockapi");
+      setData({ ...data, features: response.data });
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const [finalData, setFinalData] = useState<any>({
     type: "FeatureCollection",
@@ -62,7 +65,7 @@ const App = () => {
   });
 
   useEffect(() => {
-    const a = data.features.filter((item) =>
+    const a = data.features.filter((item: any) =>
       sell && rent
         ? true
         : !sell && rent
@@ -71,29 +74,35 @@ const App = () => {
         ? item.properties.type === "sell"
         : false
     );
-    const b = a.filter((item) => bedRooms.includes(item.properties.bedrooms));
+    const b = a.filter((item: any) =>
+      bedRooms.includes(item.properties.bedrooms)
+    );
 
     const c = b.filter(
-      (item) =>
+      (item: any) =>
         +item.properties.price >= price[0] && +item.properties.price <= price[1]
     );
 
-    const d = c.filter((item) => item.properties.buildingType === propertyType);
+    const d = c.filter(
+      (item: any) => item.properties.buildingType === propertyType
+    );
 
     const e = d.filter(
-      (item) =>
+      (item: any) =>
         item.properties.meterage >= metrage[0] &&
         item.properties.meterage <= metrage[1]
     );
     setFinalData({ ...finalData, features: e });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sell, rent, bedRooms, propertyType, price, metrage]);
+  }, [sell, rent, bedRooms, propertyType, price, metrage, data]);
 
   useEffect(() => {
+    getData();
     if (map.current) return;
     map.current = new mapboxgl.Map({
       accessToken:
         "pk.eyJ1IjoibWF0aW5ub3JvenBvdXIiLCJhIjoiY2xhZjZyMzY1MTIxdDN2czQycjNsdXdxbyJ9.SAwQhE_inq9Syo1F3boUCA",
+
       container: mapContainer.current,
       style: "mapbox://styles/mapbox/light-v11",
       center: [lng, lat],

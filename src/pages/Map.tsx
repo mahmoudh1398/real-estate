@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Map, {
   FullscreenControl,
-  LayerProps,
   NavigationControl,
   ScaleControl,
 } from "react-map-gl";
@@ -16,7 +15,7 @@ const TOKEN = `pk.eyJ1IjoibWF0aW5ub3JvenBvdXIiLCJhIjoiY2xhZjZyMzY1MTIxdDN2czQycj
 
 interface BuildingMapProps {}
 
-const BuildingMap = (props: BuildingMapProps) => {
+const BuildingMap: React.FC<BuildingMapProps> = () => {
   const [ChangeZoom, setChangeZoom] = useState<any>();
 
   const [currentLocation, setCurrentLocation] = useState([
