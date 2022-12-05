@@ -11,7 +11,7 @@ import PropertyType from "../components/PropertyType";
 import Price from "../components/Price";
 import Slider from "../components/Slider";
 
-function App() {
+const App = () => {
   const mapContainer: any = useRef(null);
   const map: any = useRef(null);
 
@@ -20,7 +20,7 @@ function App() {
   const [search, setSearch] = useState<string>("");
   const [bedRooms, setBedRooms] = useState<Array<number>>([1]);
   const [propertyType, setPropertyType] = useState<string>("آپارتمانی");
-  const [price, setPrice] = useState<Array<number>>([0, 1000000000]);
+  const [price, setPrice] = useState<Array<number>>([0, 10000000000]);
 
   const [lng, setLng] = useState(-70.9);
   const [lat, setLat] = useState(42.35);
@@ -58,8 +58,6 @@ function App() {
     features: [],
   });
 
-  console.log(finalData);
-
   useEffect(() => {
     const a = data.features.filter((item) =>
       sell && rent
@@ -77,12 +75,13 @@ function App() {
         +item.properties.price >= price[0] && +item.properties.price <= price[1]
     );
 
-    setFinalData({ ...finalData, features: c });
+    const d = c.filter((item) => item.properties.buildingType === propertyType);
+
+    setFinalData({ ...finalData, features: d });
   }, [sell, rent, bedRooms, propertyType, price]);
 
   useEffect(() => {
     if (map.current) return;
-
     map.current = new mapboxgl.Map({
       accessToken:
         "pk.eyJ1IjoibWF0aW5ub3JvenBvdXIiLCJhIjoiY2xhZjZyMzY1MTIxdDN2czQycjNsdXdxbyJ9.SAwQhE_inq9Syo1F3boUCA",
@@ -108,7 +107,7 @@ function App() {
     map.current.on("load", () => {
       map.current.addSource("earthquakes", {
         type: "geojson",
-        data: data,
+        data: finalData,
         cluster: true,
         clusterRadius: 80,
         clusterProperties: {
@@ -189,7 +188,7 @@ function App() {
       const markers: any = {};
       let markersOnScreen: any = {};
 
-      function updateMarkers() {
+      const updateMarkers = () => {
         const newMarkers: any = {};
         const features = map.current.querySourceFeatures("earthquakes");
 
@@ -214,15 +213,16 @@ function App() {
           if (!newMarkers[id]) markersOnScreen[id].remove();
         }
         markersOnScreen = newMarkers;
-      }
+      };
 
       map.current.on("render", () => {
-        if (!map.current.isSourceLoaded("earthquakes")) return;
-        updateMarkers();
+        if (map.current.isSourceLoaded("earthquakes")) {
+          updateMarkers();
+        }
       });
     });
 
-    function createDonutChart(props: any) {
+    const createDonutChart = (props: any) => {
       const offsets = [];
       const counts = [
         props.mag1,
@@ -264,9 +264,15 @@ function App() {
       const el = document.createElement("div");
       el.innerHTML = html;
       return el.firstChild;
-    }
+    };
 
-    function donutSegment(start: any, end: any, r: any, r0: any, color: any) {
+    const donutSegment = (
+      start: any,
+      end: any,
+      r: any,
+      r0: any,
+      color: any
+    ) => {
       if (end - start === 1) end -= 0.00001;
       const a0 = 2 * Math.PI * (start - 0.25);
       const a1 = 2 * Math.PI * (end - 0.25);
@@ -283,8 +289,8 @@ function App() {
       } ${r + r0 * y1} A ${r0} ${r0} 0 ${largeArc} 0 ${r + r0 * x0} ${
         r + r0 * y0
       }" fill="${color}" />`;
-    }
-  }, [finalData]);
+    };
+  }, []);
 
   useEffect(() => {
     if (!map.current) return;
@@ -295,9 +301,10 @@ function App() {
     });
   });
 
-  // useEffect(() => {
-  //   getData();
-  // }, []);
+  useEffect(() => {
+    const mySource = map.current.getSource("earthquakes");
+    mySource && mySource.setData(finalData);
+  }, [finalData, map?.current?.getSource("earthquakes")]);
 
   return (
     <div>
@@ -321,6 +328,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;
