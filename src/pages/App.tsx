@@ -10,6 +10,7 @@ import BedRooms from "../components/BedRooms";
 import PropertyType from "../components/PropertyType";
 import Price from "../components/Price";
 import Slider from "../components/Slider";
+import Meterage from "../components/Meterage";
 
 const App = () => {
   const mapContainer: any = useRef(null);
@@ -21,10 +22,12 @@ const App = () => {
   const [bedRooms, setBedRooms] = useState<Array<number>>([1]);
   const [propertyType, setPropertyType] = useState<string>("آپارتمانی");
   const [price, setPrice] = useState<Array<number>>([0, 10000000000]);
+  const [metrage, setMetrage] = useState<Array<number>>([0, 99999]);
 
   const [lng, setLng] = useState(-70.9);
   const [lat, setLat] = useState(42.35);
   const [zoom, setZoom] = useState(1);
+
   // const [data, setData] = useState({
   //   type: "FeatureCollection",
   //   crs: {
@@ -77,8 +80,14 @@ const App = () => {
 
     const d = c.filter((item) => item.properties.buildingType === propertyType);
 
-    setFinalData({ ...finalData, features: d });
-  }, [sell, rent, bedRooms, propertyType, price]);
+    const e = d.filter(
+      (item) =>
+        item.properties.meterage >= metrage[0] &&
+        item.properties.meterage <= metrage[1]
+    );
+    setFinalData({ ...finalData, features: e });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sell, rent, bedRooms, propertyType, price, metrage]);
 
   useEffect(() => {
     if (map.current) return;
@@ -304,6 +313,7 @@ const App = () => {
   useEffect(() => {
     const mySource = map.current.getSource("earthquakes");
     mySource && mySource.setData(finalData);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [finalData, map?.current?.getSource("earthquakes")]);
 
   return (
@@ -324,6 +334,7 @@ const App = () => {
         />
         <Price range={price} setRange={setPrice} />
         <BedRooms bedRooms={bedRooms} setBedRooms={setBedRooms} />
+        <Meterage metrage={metrage} setMetrage={setMetrage} />
         <Slider />
       </div>
     </div>
