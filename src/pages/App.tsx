@@ -339,7 +339,7 @@ const App = () => {
         <Price range={price} setRange={setPrice} />
         <BedRooms bedRooms={bedRooms} setBedRooms={setBedRooms} />
         <Meterage metrage={metrage} setMetrage={setMetrage} />
-        <Slider data={data.features} />
+        <Slider data={finalData.features} />
       </div>
     </div>
   );

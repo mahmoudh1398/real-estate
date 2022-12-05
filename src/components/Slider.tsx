@@ -12,13 +12,11 @@ const Slider: FC<SliderProps> = ({ data }): JSX.Element => {
   };
 
   return (
-    <Flickity
-      className={"carousel"}
-      elementType={"div"}
-      options={flickityOptions}
-    >
+    <Flickity className="carousel" elementType="div" options={flickityOptions}>
       {data.map((item: any, index: number) => (
-        <Tooltip item={item.properties} key={index} />
+        <div style={{ padding: "0 15px" }}>
+          <Tooltip item={item.properties} key={index} />
+        </div>
       ))}
     </Flickity>
   );
